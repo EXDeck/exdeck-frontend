@@ -1,6 +1,6 @@
-import {defineConfig} from 'vite';
-import solidPlugin from 'vite-plugin-solid';
-import * as path from 'path';
+import { defineConfig } from 'vite'
+import solidPlugin from 'vite-plugin-solid'
+import * as path from 'path'
 
 export default defineConfig({
   build: {
@@ -8,6 +8,9 @@ export default defineConfig({
     emptyOutDir: true,
     target: 'esnext',
     polyfillDynamicImport: false,
+  },
+  server: {
+    host: true,
   },
   root: './src',
   publicDir: '../public',
@@ -17,4 +20,4 @@ export default defineConfig({
     },
   },
   plugins: [solidPlugin()],
-});
+})
