@@ -1,6 +1,9 @@
-# birdseye-frontend-solid
+![EXDeck](https://user-images.githubusercontent.com/66313777/128413639-b654dffb-e0e7-497a-b376-2c6eb4da5998.gif)
 
-A lightweight multi-column Twitter client frontend made with [Solid](https://www.solidjs.com).
+# EXDeck (birdseye-frontend-solid)
+
+A lightweight multi-column Twitter client frontend made with [Solid](https://www.solidjs.com)  
+[EXDeck.jp](https://exdeck.jp)
 
 Use with [birdseye-deno](https://github.com/MarinDeck/birdseye-deno).
 
