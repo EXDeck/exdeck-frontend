@@ -45,7 +45,7 @@ module.exports = {
         format: ['StrictPascalCase'],
       },
       {
-        selector: 'objectLiteralProperty',
+        selector: 'property',
         format: [],
       },
       {
