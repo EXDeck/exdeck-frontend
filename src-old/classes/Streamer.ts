@@ -16,6 +16,13 @@ export interface StatusesWithId {
 }
 
 export class Streamer {
-  updater: (streamerOptions: StreamerOptions, twitterOptions: TwitterOptionsWithId) => Promise<StatusesWithID>
+  updater: (
+    streamerOptions: StreamerOptions,
+    twitterOptions: TwitterOptionsWithId,
+  ) => Promise<StatusesWithId>
+  intervalId: number | null = null
+  streamerOptions: StreamerOptions | {} = {}
+  twitterOptions: TwitterOptionsWithId = {}
+
   constructor() {}
 }

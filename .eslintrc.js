@@ -3,15 +3,29 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  plugins: ['@typescript-eslint', 'jsdoc'],
+  plugins: ['import', 'unused-imports', '@typescript-eslint', 'jsdoc'],
   extends: ['google', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
   },
   rules: {
+    '@typescript-eslint/no-unused-vars': 0,
     'require-jsdoc': 0,
     'valid-jsdoc': 0,
+
+    'import/newline-after-import': 1,
+    'import/order': [
+      1,
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
+
+    'unused-imports/no-unused-imports': 1,
 
     'jsdoc/require-jsdoc': 2,
     'jsdoc/require-param': 2,

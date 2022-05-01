@@ -1,14 +1,29 @@
 import { createSignal } from 'solid-js'
+import { Dynamic } from 'solid-js/web'
+import { Link, MetaProvider } from 'solid-meta'
+
 import App from './App'
-import Onboarding from './Onboarding'
+import Loading from './Common/Loading'
+
+type ScreenState = 'loading' | 'onboarding' | 'app'
+
+const screen = {
+  loading: () => <Loading type="logo" />,
+  onboarding: () => <div>Onboarding</div>,
+  app: () => <App />,
+}
 
 const root = () => {
-  const [getComponent, setComponent] = createSignal(<div>test</div>)
+  const [getScreenState, setScreenState] = createSignal<ScreenState>('loading')
 
-  const loggedIn = false
-  loggedIn ? setComponent(App) : setComponent(Onboarding)
+  setTimeout(() => setScreenState('app'), 1000)
 
-  return getComponent()
+  return (
+    <MetaProvider>
+      <Link rel="stylesheet" href={`/themes/${'harmony.min.css'}`} />
+      <Dynamic component={screen[getScreenState()]} />
+    </MetaProvider>
+  )
 }
 
 export default root
