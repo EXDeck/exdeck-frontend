@@ -1,15 +1,29 @@
-import { Component, JSX, mergeProps } from 'solid-js'
+import { Component, createEffect, createSignal, mergeProps, splitProps } from 'solid-js'
 
 interface Props {
-  onClick?: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent>
-  icon?: boolean
+  onClick: Function
+  type?: '' | 'primary' | 'mask'
+}
+
+type ClassList = {
+  [className: string]: boolean
 }
 
 const Btn: Component<Props> = (props) => {
-  props = mergeProps({ icon: false }, props)
+  const [getBtnClassList, setBtnClassList] = createSignal<ClassList>({
+    btn: true,
+  })
+  props = mergeProps({ type: 'normal' }, props)
+  const [local] = splitProps(props, ['type', 'children', 'onClick'])
+  createEffect(() => {
+    setBtnClassList({
+      btn: true,
+      [local.type || 'btn']: true,
+    })
+  })
   return (
-    <button class="btn" onClick={props.onClick}>
-      {props.icon ? <i>{props.children}</i> : props.children}
+    <button classList={getBtnClassList()} onClick={() => local.onClick()}>
+      {local.children}
     </button>
   )
 }

@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  plugins: ['import', 'unused-imports', 'autofix', '@typescript-eslint', 'jsdoc'],
+  plugins: ['import', 'unused-imports', '@typescript-eslint', 'jsdoc'],
   extends: ['google', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -26,7 +26,7 @@ module.exports = {
     ],
 
     'unused-imports/no-unused-imports': 1,
-    'autofix/no-unused-vars': 1,
+    'no-unused-vars': [1, { vars: 'all', args: 'after-used' }],
 
     'jsdoc/require-jsdoc': 2,
     'jsdoc/require-param': 2,

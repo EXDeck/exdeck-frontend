@@ -7,7 +7,6 @@ specifiers:
   eslint: ^8.13.0
   eslint-config-google: ^0.14.0
   eslint-config-prettier: ^8.5.0
-  eslint-plugin-autofix: ^1.1.0
   eslint-plugin-import: ^2.26.0
   eslint-plugin-jsdoc: ^39.2.3
   eslint-plugin-unused-imports: ^2.0.0
@@ -30,7 +29,6 @@ devDependencies:
   eslint: 8.13.0
   eslint-config-google: 0.14.0_eslint@8.13.0
   eslint-config-prettier: 8.5.0_eslint@8.13.0
-  eslint-plugin-autofix: 1.1.0_eslint@8.13.0
   eslint-plugin-import: 2.26.0_eslint@8.13.0
   eslint-plugin-jsdoc: 39.2.3_eslint@8.13.0
   eslint-plugin-unused-imports: 2.0.0_tuqq46kplckouu23hiumuyikay
@@ -1175,20 +1173,6 @@ packages:
       find-up: 2.1.0
     dev: true
 
-  /eslint-plugin-autofix/1.1.0_eslint@8.13.0:
-    resolution: {integrity: sha512-aKQ7s6CTeJRJgnhSlsGI7kQhnNCa1q3UYBM+9PTEgvdC5b+GjV/SZA233VNqkoBldb7/BkeWBRjorUjxeUfrxA==}
-    engines: {node: '>=8'}
-    peerDependencies:
-      eslint: '>= 5.12.1'
-    dependencies:
-      eslint: 8.13.0
-      eslint-rule-composer: 0.3.0
-      espree: 9.3.1
-      esutils: 2.0.3
-      lodash: 4.17.21
-      string-similarity: 4.0.4
-    dev: true
-
   /eslint-plugin-import/2.26.0_eslint@8.13.0:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
@@ -1772,10 +1756,6 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
-  /lodash/4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
-
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -2327,10 +2307,6 @@ packages:
 
   /spdx-license-ids/3.0.11:
     resolution: {integrity: sha512-Ctl2BrFiM0X3MANYgj3CkygxhRmr9mi6xhejbdO960nF6EDJApTYpn0BQnDKlnNBULKiCN1n3w9EBkHK8ZWg+g==}
-    dev: true
-
-  /string-similarity/4.0.4:
-    resolution: {integrity: sha512-/q/8Q4Bl4ZKAPjj8WerIBJWALKkaPRfrvhfF8k/B23i4nzrlRj2/go1m90In7nG/3XDSbOo0+pu6RvCTM9RGMQ==}
     dev: true
 
   /string.prototype.trimend/1.0.4:
