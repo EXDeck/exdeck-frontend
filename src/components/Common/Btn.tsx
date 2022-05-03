@@ -1,29 +1,25 @@
-import { Component, createEffect, createSignal, mergeProps, splitProps } from 'solid-js'
+import { Component, mergeProps } from 'solid-js'
 
 interface Props {
   onClick: Function
   type?: '' | 'primary' | 'mask'
+  disabled?: boolean
 }
 
-type ClassList = {
-  [className: string]: boolean
-}
+const defaultProps = { type: 'normal', disabled: false }
 
 const Btn: Component<Props> = (props) => {
-  const [getBtnClassList, setBtnClassList] = createSignal<ClassList>({
-    btn: true,
-  })
-  props = mergeProps({ type: 'normal' }, props)
-  const [local] = splitProps(props, ['type', 'children', 'onClick'])
-  createEffect(() => {
-    setBtnClassList({
-      btn: true,
-      [local.type || 'btn']: true,
-    })
-  })
+  props = mergeProps(defaultProps, props)
   return (
-    <button classList={getBtnClassList()} onClick={() => local.onClick()}>
-      {local.children}
+    <button
+      classList={{
+        btn: true,
+        [props.type || '']: true,
+      }}
+      onClick={() => props.onClick()}
+      disabled={props.disabled}
+    >
+      {props.children}
     </button>
   )
 }

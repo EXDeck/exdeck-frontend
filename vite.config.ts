@@ -1,6 +1,8 @@
+import { readFileSync } from 'fs'
+import * as path from 'path'
+
 import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
-import * as path from 'path'
 
 export default defineConfig({
   build: {
@@ -11,6 +13,10 @@ export default defineConfig({
   },
   server: {
     host: true,
+    https: {
+      key: readFileSync('./localhost-key.pem'),
+      cert: readFileSync('./localhost.pem'),
+    },
   },
   root: './src',
   publicDir: '../public',
