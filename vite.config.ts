@@ -1,7 +1,7 @@
-import { readFileSync } from 'fs'
 import * as path from 'path'
 
 import { defineConfig } from 'vite'
+import mkcert from 'vite-plugin-mkcert'
 import solidPlugin from 'vite-plugin-solid'
 
 export default defineConfig({
@@ -13,10 +13,7 @@ export default defineConfig({
   },
   server: {
     host: true,
-    https: {
-      key: readFileSync('./localhost-key.pem'),
-      cert: readFileSync('./localhost.pem'),
-    },
+    https: true,
   },
   root: './src',
   publicDir: '../public',
@@ -25,5 +22,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [solidPlugin()],
+  plugins: [mkcert(), solidPlugin()],
 })
