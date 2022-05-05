@@ -4,7 +4,8 @@ const Columns: Component = () => {
   return (
     <section class="columns">
       <h2>Columns</h2>
-      <span>はよ作れ</span>
+      <p>はよ作れ</p>
+      <p>はい……</p>
     </section>
   )
 }
