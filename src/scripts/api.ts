@@ -28,30 +28,6 @@ export interface Keys {
 const { stringify } = JSON
 
 export const api = {
-  // OAuth
-  async sendOauthRequest({
-    keys,
-    lastkeys = false,
-  }: {
-    keys?: Keys
-    lastkeys?: boolean
-  }): Promise<OauthTokens> {
-    const res = await post(backend.OAuthRequest, {
-      body: stringify({
-        keys,
-        lastkeys,
-      }),
-    })
-    const { oauth_token: oauthToken }: { oauth_token: string } = await res.json()
-    if (oauthToken) {
-      const url = new URL(twitter.oauth.authenticate)
-      url.searchParams.set('oauth_token', oauthToken)
-      url.searchParams.set('force_login', 'true')
-      return { url: url.toString(), oauth_token: oauthToken }
-    } else {
-      throw Error('oauth_token was not returned')
-    }
-  },
   // アクセストークン取得
   async authorize(
     oauthToken: string,

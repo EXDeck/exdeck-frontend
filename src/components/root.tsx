@@ -1,26 +1,19 @@
-import { createSignal } from 'solid-js'
-import { Dynamic } from 'solid-js/web'
+import { createSignal, Match, Switch } from 'solid-js'
 import { Link, MetaProvider } from 'solid-meta'
 import { Transition } from 'solid-transition-group'
 
 import App from './App'
 import Loading from './Common/Loading'
+import Onboarding from './Onboarding'
 import { getAccountsList } from './root.script'
 import StartupError from './StartupError'
 
 type ScreenState = 'loading' | 'error' | 'onboarding' | 'app'
 
-const screen = {
-  loading: () => <Loading type="logo" />,
-  error: () => <StartupError message={getErrorMessage()} />,
-  onboarding: () => <div>Onboarding</div>,
-  app: () => <App />,
-}
-
-const [getErrorMessage, setErrorMessage] = createSignal('')
-const [getScreenState, setScreenState] = createSignal<ScreenState>('loading')
-
 const root = () => {
+  const [getErrorMessage, setErrorMessage] = createSignal('')
+  const [getScreenState, setScreenState] = createSignal<ScreenState>('loading')
+
   getAccountsList()
     .then((accounts) => {
       if (accounts.length) setScreenState('app')
@@ -35,7 +28,19 @@ const root = () => {
     <MetaProvider>
       <Link rel="stylesheet" href={`/themes/${'harmony.min.css'}`} />
       <Transition name="transition-fade">
-        <Dynamic component={screen[getScreenState()]} />
+        <Switch fallback={<StartupError message="ScreenState is invalid." />}>
+          {/* loading */}
+          <Match when={getScreenState() === 'loading'} children={<Loading type="logo" />} />
+          {/* StartupError */}
+          <Match
+            when={getScreenState() === 'error'}
+            children={<StartupError message={getErrorMessage()} />}
+          />
+          {/* Onboarding */}
+          <Match when={getScreenState() === 'onboarding'} children={<Onboarding />} />
+          {/* App */}
+          <Match when={getScreenState() === 'app'} children={<App />} />
+        </Switch>
       </Transition>
     </MetaProvider>
   )
