@@ -3,6 +3,7 @@ import * as path from 'path'
 import { defineConfig } from 'vite'
 import mkcert from 'vite-plugin-mkcert'
 import solidPlugin from 'vite-plugin-solid'
+import solidSvg from 'vite-plugin-solid-svg'
 
 export default defineConfig({
   build: {
@@ -20,7 +21,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // BUG vite-plugin-solid-svgのimportパスの頭にsrcをつけてしまう不具合への暫定対処
+      $: __dirname,
     },
   },
-  plugins: [mkcert(), solidPlugin()],
+  plugins: [mkcert(), solidPlugin(), solidSvg()],
 })
