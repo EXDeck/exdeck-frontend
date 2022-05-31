@@ -4,6 +4,7 @@ import Btn from '../Common/Btn'
 import Icon from '../Common/Icon'
 
 import ColumnsController from './ColumnsController'
+import SubActions from './SubActions'
 
 const Navigation: Component = () => {
   const [getBtnType, setBtnType] = createSignal<'' | 'primary' | 'mask'>('primary')
@@ -14,6 +15,7 @@ const Navigation: Component = () => {
         <Icon>edit</Icon>
       </Btn>
       <ColumnsController />
+      <SubActions />
     </nav>
   )
 }
