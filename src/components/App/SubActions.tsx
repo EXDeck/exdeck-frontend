@@ -41,6 +41,15 @@ const AccountListKari: Component = () => {
 const SubActions: Component = () => {
   return (
     <div class="sub-actions">
+      <Btn
+        onClick={() => {
+          const url = new URL(location.href)
+          url.searchParams.set('login', 'true')
+          location.href = url.href
+        }}
+      >
+        <Icon>person_add</Icon>
+      </Btn>
       <AccountListKari />
       <Btn onClick={() => logoutKari()}>
         <Icon>logout</Icon>

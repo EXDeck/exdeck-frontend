@@ -16,17 +16,21 @@ const root = () => {
   const [getErrorMessage, setErrorMessage] = createSignal('')
   const [getScreenState, setScreenState] = createSignal<ScreenState>('loading')
 
-  getAccountsList()
-    .then((accounts) => {
-      if (accounts.length) {
-        setGlobalAccounts(accounts)
-        setScreenState('app')
-      } else setScreenState('onboarding')
-    })
-    .catch((error: Error) => {
-      setErrorMessage(error.message)
-      setScreenState('error')
-    })
+  const forceOnboarding = !!new URL(location.href).searchParams.get('login')
+
+  if (forceOnboarding) setScreenState('onboarding')
+  else
+    getAccountsList()
+      .then((accounts) => {
+        if (accounts.length) {
+          setGlobalAccounts(accounts)
+          setScreenState('app')
+        } else setScreenState('onboarding')
+      })
+      .catch((error: Error) => {
+        setErrorMessage(error.message)
+        setScreenState('error')
+      })
 
   return (
     <MetaProvider>
