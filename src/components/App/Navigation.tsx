@@ -4,6 +4,7 @@ import Btn from '../Common/Btn'
 import Icon from '../Common/Icon'
 
 import ColumnsController from './ColumnsController'
+import NavigationLogo from './NavigationLogo'
 import SubActions from './SubActions'
 
 const Navigation: Component = () => {
@@ -16,6 +17,7 @@ const Navigation: Component = () => {
       </Btn>
       <ColumnsController />
       <SubActions />
+      <NavigationLogo />
     </nav>
   )
 }

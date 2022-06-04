@@ -8,6 +8,8 @@ import Onboarding from './Onboarding'
 import { getAccountsList } from './root.script'
 import StartupError from './StartupError'
 
+import { setGlobalAccounts } from '@/scripts/globalSignals'
+
 type ScreenState = 'loading' | 'error' | 'onboarding' | 'app'
 
 const root = () => {
@@ -16,8 +18,10 @@ const root = () => {
 
   getAccountsList()
     .then((accounts) => {
-      if (accounts.length) setScreenState('app')
-      else setScreenState('onboarding')
+      if (accounts.length) {
+        setGlobalAccounts(accounts)
+        setScreenState('app')
+      } else setScreenState('onboarding')
     })
     .catch((error: Error) => {
       setErrorMessage(error.message)
