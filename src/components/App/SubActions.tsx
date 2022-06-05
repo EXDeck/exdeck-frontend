@@ -44,7 +44,7 @@ const SubActions: Component = () => {
       <Btn
         onClick={() => {
           const url = new URL(location.href)
-          url.searchParams.set('login', 'true')
+          url.searchParams.set('add_account', 'true')
           location.href = url.href
         }}
       >

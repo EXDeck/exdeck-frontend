@@ -1,5 +1,9 @@
 import { createSignal, Match, Switch } from 'solid-js'
+import { Transition } from 'solid-transition-group'
 
+import { transitionFade } from '../ref/transitionName'
+
+import Loading from './Common/Loading'
 import { sendOauthRequest } from './Onboarding.script'
 import OauthInterface from './Onboarding/OauthInterface'
 
@@ -13,8 +17,6 @@ const Onboarding = () => {
 
   sendOauthRequest()
     .then(({ url, oauth_token: oauthToken }) => {
-      console.log(url)
-
       setUrl(url)
       setOauthToken(oauthToken)
       setOauthState('complete')
@@ -24,15 +26,17 @@ const Onboarding = () => {
       setOauthState('error')
     })
   return (
-    <div>
-      <Switch>
-        <Match when={getOauthState() === 'requesting'} children={<div>Requesting...</div>} />
-        <Match
-          when={getOauthState() === 'complete'}
-          children={<OauthInterface url={getUrl()} oauthToken={getOauthToken()} />}
-        />
-        <Match when={getOauthState() === 'error'} children={<div>{getErrorMessage()}</div>} />
-      </Switch>
+    <div id="onboarding">
+      <Transition name={transitionFade}>
+        <Switch>
+          <Match when={getOauthState() === 'requesting'} children={<Loading type="logo" />} />
+          <Match
+            when={getOauthState() === 'complete'}
+            children={<OauthInterface url={getUrl()} oauthToken={getOauthToken()} />}
+          />
+          <Match when={getOauthState() === 'error'} children={<div>{getErrorMessage()}</div>} />
+        </Switch>
+      </Transition>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import Onboarding from './Onboarding'
 import { getAccountsList } from './root.script'
 import StartupError from './StartupError'
 
+import { transitionFade } from '@/ref/transitionName'
 import { setGlobalAccounts } from '@/scripts/globalSignals'
 
 type ScreenState = 'loading' | 'error' | 'onboarding' | 'app'
@@ -16,26 +17,28 @@ const root = () => {
   const [getErrorMessage, setErrorMessage] = createSignal('')
   const [getScreenState, setScreenState] = createSignal<ScreenState>('loading')
 
-  const forceOnboarding = !!new URL(location.href).searchParams.get('login')
+  // /?add_account=trueでのログイン画面強制表示用
+  const forceOnboarding = !!new URL(location.href).searchParams.get('add_account')
 
-  if (forceOnboarding) setScreenState('onboarding')
-  else
-    getAccountsList()
-      .then((accounts) => {
-        if (accounts.length) {
-          setGlobalAccounts(accounts)
-          setScreenState('app')
-        } else setScreenState('onboarding')
-      })
-      .catch((error: Error) => {
-        setErrorMessage(error.message)
-        setScreenState('error')
-      })
+  // 表示画面切り替え
+  forceOnboarding
+    ? setScreenState('onboarding')
+    : getAccountsList()
+        .then((accounts) => {
+          if (accounts.length) {
+            setGlobalAccounts(accounts)
+            setScreenState('app')
+          } else setScreenState('onboarding')
+        })
+        .catch((error: Error) => {
+          setErrorMessage(error.message)
+          setScreenState('error')
+        })
 
   return (
     <MetaProvider>
       <Link rel="stylesheet" href={`/themes/${'harmony.min.css'}`} />
-      <Transition name="transition-fade">
+      <Transition name={transitionFade}>
         <Switch fallback={<StartupError message="ScreenState is invalid." />}>
           {/* loading */}
           <Match when={getScreenState() === 'loading'} children={<Loading type="logo" />} />
