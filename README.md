@@ -55,9 +55,9 @@ pnpm dev # or pnpm start
 
 ## Build
 
-<!-- Start development serverの手順がすべて行われているかを確認してください。 -->
+<!-- src/.env.production.localファイルを作成し、通信を行うバックエンドのURLを指定してください。(記入例はsrc/.env.production.exampleを参照してください。) -->
 
-Make sure all the **Start development server** steps are done.
+Create a `src/.env.production.local` file and specify the URL of the backend to communicate with. (See `src/.env.production.example` for an example.)
 
 <!-- その後、以下のコマンドを実行します。 -->
 
@@ -69,9 +69,9 @@ pnpm build
 
 ## Build https
 
-<!-- Start development server in httpsの手順がすべて行われているかを確認してください。 -->
+<!-- Buildの手順をすべて行った上で、src/.env.production.localにHttpsでの実行フラグと通信を行うバックエンドのURLを指定してください。(記入例はsrc/.env.production.exampleを参照してください。)  -->
 
-Make sure all the **Start development server in https** steps are done.
+After completing all the **Build** steps, specify the execution flag in Https and the URL of the backend to communicate with in `src/.env.production.local`. (See `src/.env.production.example` for an example.)
 
 <!-- その後、以下のコマンドを実行します。 -->
 
