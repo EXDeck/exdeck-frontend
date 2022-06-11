@@ -6,6 +6,7 @@ import { transitionFade } from '../ref/transitionName'
 import Loading from './Common/Loading'
 import { sendOauthRequest } from './Onboarding.script'
 import OauthInterface from './Onboarding/OauthInterface'
+import StartupError from './StartupError'
 
 type OauthState = 'requesting' | 'error' | 'complete'
 
@@ -34,7 +35,10 @@ const Onboarding = () => {
             when={getOauthState() === 'complete'}
             children={<OauthInterface url={getUrl()} oauthToken={getOauthToken()} />}
           />
-          <Match when={getOauthState() === 'error'} children={<div>{getErrorMessage()}</div>} />
+          <Match
+            when={getOauthState() === 'error'}
+            children={<StartupError message={getErrorMessage()} />}
+          />
         </Switch>
       </Transition>
     </div>

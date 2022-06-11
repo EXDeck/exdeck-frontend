@@ -8,9 +8,9 @@
     "build": "vite build",
     "serve": "vite preview",
     "fix": "pnpm fix:prettier && pnpm fix:eslint",
-    "fix:prettier": "prettier --write 'src/**/*.{html,css,scss,js,ts,jsx,tsx,json}'",
-    "lint:eslint": "eslint 'src/**/*.{js,ts,jsx,tsx}'",
-    "fix:eslint": "eslint --fix 'src/**/*.{js,ts,jsx,tsx}'"
+    "fix:prettier": "prettier --write \"src/**/*.{html,css,scss,js,ts,jsx,tsx,json}\"",
+    "lint:eslint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
+    "fix:eslint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\""
   },
   "license": "MIT",
   "devDependencies": {

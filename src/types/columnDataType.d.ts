@@ -1,16 +1,17 @@
 import { Errors } from './twitter.d'
+
 import type { SpecialStatus } from '@/types/twitter'
 
-export interface StatusesWithID {
+export interface StatusesWithId {
   [accountID: string]: SpecialStatus[]
 }
 
-export interface ErrorsWithID {
+export interface ErrorsWithId {
   [accountID: string]: Errors
 }
 
-export interface TwitterOptionsWithID {
+export interface TwitterOptionsWithId {
   [accountID: string]: object
 }
 
-export type StatusWithID = [accountID: string, Status: SpecialStatus]
+export type StatusWithId = [accountId: string, Status: SpecialStatus]
