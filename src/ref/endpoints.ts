@@ -2,8 +2,8 @@ const url = (() => {
   const url = `${import.meta.env.VITE_API_URL}`
   if (!url) throw Error('Environment variable "VITE_API_URL" is not set')
   const isHttps = `${import.meta.env.VITE_API_HTTPS}`.toLowerCase() === 'true'
-  const urlHttps = `${import.meta.env.VITE_API_URL_HTTPS}`
-  if (isHttps && !urlHttps) throw Error('Environment variable "VITE_API_URL" is not set')
+  const urlHttps = `${import.meta.env.VITE_API_URL_HTTPS || ''}`
+  if (isHttps && !urlHttps) throw Error('Environment variable "VITE_API_URL_HTTPS" is not set')
   return isHttps ? urlHttps : url
 })()
 
