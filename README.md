@@ -9,7 +9,7 @@ Use with [birdseye-deno](https://github.com/MarinDeck/birdseye-deno).
 
 ## Requirement
 
-- Node.js version manager (Recommend using [fnm](fnm.vercel.app))
+- Node.js version manager (Recommend using [fnm](https://fnm.vercel.app/)
 - [Node.js](https://nodejs.org) (17.9.0)
 - [PNpm](https://pnpm.io)
 
