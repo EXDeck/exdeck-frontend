@@ -1,4 +1,5 @@
-const url = (() => {
+// backend Api
+const bApi = (() => {
   const url = `${import.meta.env.VITE_API_URL}`
   if (!url) throw Error('Environment variable "VITE_API_URL" is not set')
   const isHttps = `${import.meta.env.VITE_API_HTTPS}`.toLowerCase() === 'true'
@@ -7,33 +8,36 @@ const url = (() => {
   return isHttps ? urlHttps : url
 })()
 
+// twitter Api
+const tApi = 'https://api.twitter.com'
+
 export const endpoints = {
   backend: {
-    OAuthRequest: `${url}/oauthtoken`,
-    authorize: `${url}/authorize`,
-    getAccounts: `${url}/getaccounts`,
-    logout: `${url}/logout`,
-    logoutAll: `${url}/logoutall`,
-    get: `${url}/get`,
+    OAuthRequest: `${bApi}/oauthtoken`,
+    authorize: `${bApi}/authorize`,
+    getAccounts: `${bApi}/getaccounts`,
+    logout: `${bApi}/logout`,
+    logoutAll: `${bApi}/logoutall`,
+    get: `${bApi}/get`,
   },
   twitter: {
     oauth: {
-      authenticate: `https://api.twitter.com/oauth/authenticate`,
+      authenticate: `${tApi}/oauth/authenticate`,
     },
 
     normal: {
       '1.1': {
         statuses: {
-          homeTimeline: `https://api.twitter.com/1.1/statuses/home_timeline.json`,
+          homeTimeline: `${tApi}/1.1/statuses/home_timeline.json`,
         },
         search: {
-          tweets: `https://api.twitter.com/1.1/search/tweets.json`,
+          tweets: `${tApi}/1.1/search/tweets.json`,
         },
         users: {
-          show: `https://api.twitter.com/1.1/users/show.json`,
+          show: `${tApi}/1.1/users/show.json`,
         },
         application: {
-          rateLimitStatus: `https://api.twitter.com/1.1/application/rate_limit_status.json`,
+          rateLimitStatus: `${tApi}/1.1/application/rate_limit_status.json`,
         },
       },
     },
@@ -41,7 +45,7 @@ export const endpoints = {
     special: {
       '1.1': {
         search: {
-          universal: `https://api.twitter.com/1.1/search/universal.json`,
+          universal: `${tApi}/1.1/search/universal.json`,
         },
       },
     },
