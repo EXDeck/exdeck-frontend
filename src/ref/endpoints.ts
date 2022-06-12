@@ -1,4 +1,4 @@
-// backend Api
+// NOTE backend Api
 const bApi = (() => {
   const url = `${import.meta.env.VITE_API_URL}`
   if (!url) throw Error('Environment variable "VITE_API_URL" is not set')
@@ -8,7 +8,7 @@ const bApi = (() => {
   return isHttps ? urlHttps : url
 })()
 
-// twitter Api
+// NOTE twitter Api
 const tApi = 'https://api.twitter.com'
 
 export const endpoints = {

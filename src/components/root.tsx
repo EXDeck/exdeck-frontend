@@ -17,10 +17,10 @@ const root = () => {
   const [getErrorMessage, setErrorMessage] = createSignal('')
   const [getScreenState, setScreenState] = createSignal<ScreenState>('loading')
 
-  // /?add_account=trueでのログイン画面強制表示用
+  // NOTE /?add_account=trueでのログイン画面強制表示用
   const forceOnboarding = !!new URL(location.href).searchParams.get('add_account')
 
-  // 表示画面切り替え
+  // NOTE 表示画面切り替え
   forceOnboarding
     ? setScreenState('onboarding')
     : getAccountsList()
