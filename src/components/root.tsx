@@ -31,6 +31,8 @@ const root = () => {
           } else setScreenState('onboarding')
         })
         .catch((error: Error) => {
+          console.error(error)
+
           setErrorMessage(error.message)
           setScreenState('error')
         })
