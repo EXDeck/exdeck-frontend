@@ -2,23 +2,21 @@
 
 # EXDeck (birdseye-frontend)
 
-A lightweight multi-column Twitter client frontend made with [Solid](https://www.solidjs.com)
+軽量なマルチカラムな Twitter クライアントの [SolidJS](https://www.solidjs.com) 製フロントエンド
+
+[birdseye-deno](https://github.com/MarinDeck/birdseye-deno) と合わせて使用してください
 
 [EXDeck.jp](https://exdeck.jp)
 
-Use with [birdseye-deno](https://github.com/MarinDeck/birdseye-deno).
+## 必要要件
 
-## Requirement
-
-- Node.js version manager (Recommend using [fnm](https://fnm.vercel.app/)
+- Node.js version manager ([fnm](https://fnm.vercel.app/)を推奨)
 - [Node.js](https://nodejs.org) (17.9.0)
 - [PNpm](https://pnpm.io)
 
-## Installation
+## インストール
 
-<!-- 以下のコマンドを実行します。 -->
-
-Execute the following command.
+以下のコマンドを実行します。
 
 ```sh
 git clone https://github.com/MarinDeck/birdseye-frontend.git
@@ -26,57 +24,41 @@ cd birdseye-frontend
 pnpm i
 ```
 
-## Start development server
+## 開発用サーバーの起動方法
 
-<!-- src/.env.development.localファイルを作成し、開発時に通信を行うバックエンドのURLを指定してください。(記入例はsrc/.env.development.exampleを参照してください。) -->
+src/.env.development.local ファイルを作成し、開発時に通信を行うバックエンドの URL を指定してください。(記入例は src/.env.development.example を参照してください。)
 
-Create a `src/.env.development.local` file and specify the URL of the backend with which you want to communicate during development. (See `src/.env.development.example` for an example.)
-
-<!-- その後、以下のコマンドを実行します。 -->
-
-Then execute the following command.
+その後、以下のコマンドを実行します。
 
 ```sh
 pnpm dev # or pnpm start
 ```
 
-## Start development server in https
+## 開発用サーバーの起動方法(HTTPS)
 
-<!-- Start development serverの手順をすべて行った上で、src/.env.development.localにHttpsでの実行フラグと開発時に通信を行うバックエンドのURLを指定してください。(記入例はsrc/.env.development.exampleを参照してください。)  -->
+**開発用サーバーの起動方法** の手順をすべて行った上で、src/.env.development.local に Https での実行フラグと開発時に通信を行うバックエンドの URL を指定してください。(記入例は src/.env.development.example を参照してください。)
 
-After completing all the steps of **Start development server**, specify the execution flag in Https and the URL of the backend to communicate during development in `src/.env.development.local`. (See `src/.env.development.example` for an example.)
-
-<!-- その後、以下のコマンドを実行します。 -->
-
-Then execute the following command.
+その後、以下のコマンドを実行します。
 
 ```sh
 pnpm dev # or pnpm start
 ```
 
-## Build
+## ビルド
 
-<!-- src/.env.production.localファイルを作成し、通信を行うバックエンドのURLを指定してください。(記入例はsrc/.env.production.exampleを参照してください。) -->
+src/.env.production.local ファイルを作成し、通信を行うバックエンドの URL を指定してください。(記入例は src/.env.production.example を参照してください。)
 
-Create a `src/.env.production.local` file and specify the URL of the backend to communicate with. (See `src/.env.production.example` for an example.)
-
-<!-- その後、以下のコマンドを実行します。 -->
-
-Then execute the following command.
+その後、以下のコマンドを実行します。
 
 ```sh
 pnpm build
 ```
 
-## Build https
+## ビルド(HTTPS)
 
-<!-- Buildの手順をすべて行った上で、src/.env.production.localにHttpsでの実行フラグと通信を行うバックエンドのURLを指定してください。(記入例はsrc/.env.production.exampleを参照してください。)  -->
+**ビルド** の手順をすべて行った上で、src/.env.production.local に Https での実行フラグと通信を行うバックエンドの URL を指定してください。(記入例は src/.env.production.example を参照してください。)
 
-After completing all the **Build** steps, specify the execution flag in Https and the URL of the backend to communicate with in `src/.env.production.local`. (See `src/.env.production.example` for an example.)
-
-<!-- その後、以下のコマンドを実行します。 -->
-
-Then execute the following command.
+その後、以下のコマンドを実行します。
 
 ```sh
 pnpm build
