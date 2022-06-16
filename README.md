@@ -1,18 +1,19 @@
 ![EXDeck](https://user-images.githubusercontent.com/66313777/128413639-b654dffb-e0e7-497a-b376-2c6eb4da5998.gif)
 
-# EXDeck (birdseye-frontend)
+# Frontend for EXDeck
 
-軽量なマルチカラムな Twitter クライアントの [SolidJS](https://www.solidjs.com) 製フロントエンド
+[EXDeck](https://exdeck.jp/)は、軽量なマルチカラムのTwitterクライアントです。
 
-[birdseye-deno](https://github.com/MarinDeck/birdseye-deno) と合わせて使用してください
+## 関連リポジトリ
 
-[EXDeck.jp](https://exdeck.jp)
+- フロントエンド [birdseye-frontend](https://github.com/MarinDeck/birdseye-frontend) (このリポジトリ)
+- バックエンド [birdseye-backend](https://github.com/MarinDeck/birdseye-backend)
 
 ## 必要要件
 
-- Node.js version manager ([fnm](https://fnm.vercel.app/)を推奨)
-- [Node.js](https://nodejs.org) (17.9.0)
-- [PNpm](https://pnpm.io)
+- Node.js Version Manager ([fnm](https://fnm.vercel.app/)を推奨)
+- [Node.js](https://nodejs.org/) v17.9.0
+- [pnpm](https://pnpm.io/)
 
 ## インストール
 
@@ -24,42 +25,42 @@ cd birdseye-frontend
 pnpm i
 ```
 
-## 開発用サーバーの起動方法
+## 使い方
 
-src/.env.development.local ファイルを作成し、開発時に通信を行うバックエンドの URL を指定してください。(記入例は src/.env.development.example を参照してください。)
+### 開発用サーバーの起動
 
-その後、以下のコマンドを実行します。
+`src/.env.development.local` ファイルを作成します。
 
-```sh
-pnpm dev # or pnpm start
-```
+**HTTPS通信をする場合**は、`VITE_API_HTTPS`(HTTPS通信の実行フラグ) を `true` にし、`VITE_API_URL_HTTPS`(開発時にHTTPS通信を行うバックエンドのURL) を指定します。
 
-## 開発用サーバーの起動方法(HTTPS)
+**HTTP通信をする場合**は、`VITE_API_HTTPS`(HTTPS通信の実行フラグ) を `false` にし、`VITE_API_URL`(開発時にHTTP通信を行うバックエンドのURL) を指定します。
 
-**開発用サーバーの起動方法** の手順をすべて行った上で、src/.env.development.local に Https での実行フラグと開発時に通信を行うバックエンドの URL を指定してください。(記入例は src/.env.development.example を参照してください。)
+記入例は `src/.env.development.example` を参照してください。
 
 その後、以下のコマンドを実行します。
 
 ```sh
-pnpm dev # or pnpm start
+pnpm dev
 ```
 
-## ビルド
+### ビルド
 
-src/.env.production.local ファイルを作成し、通信を行うバックエンドの URL を指定してください。(記入例は src/.env.production.example を参照してください。)
+`src/.env.production.local` ファイルを作成します。
 
-その後、以下のコマンドを実行します。
+**HTTPS通信をする場合**は、`VITE_API_HTTPS`(HTTPS通信の実行フラグ) を `true` にし、`VITE_API_URL_HTTPS`(HTTPS通信を行うバックエンドのURL) を指定します。
 
-```sh
-pnpm build
-```
+**HTTP通信をする場合**は、`VITE_API_HTTPS`(HTTPS通信の実行フラグ) を `false` にし、`VITE_API_URL`(HTTP通信を行うバックエンドのURL) を指定します。
 
-## ビルド(HTTPS)
-
-**ビルド** の手順をすべて行った上で、src/.env.production.local に Https での実行フラグと通信を行うバックエンドの URL を指定してください。(記入例は src/.env.production.example を参照してください。)
+記入例は `src/.env.production.example` を参照してください。
 
 その後、以下のコマンドを実行します。
 
 ```sh
 pnpm build
 ```
+
+## ライセンス
+
+Copyright (c) 2022 EXDeck <https://github.com/MarinDeck>
+
+このソフトウェアは、[MIT License](./LICENSE)に基づき配布しています。
