@@ -6,8 +6,8 @@
 
 ## 関連リポジトリ
 
-- フロントエンド [birdseye-frontend](https://github.com/MarinDeck/birdseye-frontend) (このリポジトリ)
-- バックエンド [birdseye-backend](https://github.com/MarinDeck/birdseye-backend)
+- フロントエンド [exdeck-frontend](https://github.com/EXDeck/exdeck-frontend) (このリポジトリ)
+- バックエンド [exdeck-backend](https://github.com/EXDeck/exdeck-backend)
 
 ## 必要要件
 
@@ -20,8 +20,8 @@
 以下のコマンドを実行します。
 
 ```sh
-git clone https://github.com/MarinDeck/birdseye-frontend.git
-cd birdseye-frontend
+git clone https://github.com/EXDeck/exdeck-frontend.git
+cd exdeck-frontend
 pnpm i
 ```
 
@@ -61,6 +61,6 @@ pnpm build
 
 ## ライセンス
 
-Copyright (c) 2022 EXDeck <https://github.com/MarinDeck>
+Copyright (c) 2022 EXDeck <https://github.com/EXDeck>
 
 このソフトウェアは、[MIT License](./LICENSE)に基づき配布しています。

@@ -1,5 +1,5 @@
 {
-  "name": "birdseye-frontend",
+  "name": "exdeck-frontend",
   "version": "0.0.0",
   "description": "",
   "scripts": {
@@ -12,6 +12,7 @@
     "lint:eslint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
     "fix:eslint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\""
   },
+  "repository": "https://github.com/MarinDeck/exdeck-frontend.git",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.42",
