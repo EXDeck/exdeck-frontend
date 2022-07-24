@@ -6,6 +6,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.30.7
   eslint: ^8.20.0
   eslint-config-google: ^0.14.0
+  eslint-config-prettier: ^8.5.0
   eslint-plugin-import: ^2.26.0
   eslint-plugin-jsdoc: ^39.3.3
   eslint-plugin-unused-imports: ^2.0.0
@@ -26,6 +27,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.30.7_he2ccbldppg44uulnyq4rwocfa
   eslint: 8.20.0
   eslint-config-google: 0.14.0_eslint@8.20.0
+  eslint-config-prettier: 8.5.0_eslint@8.20.0
   eslint-plugin-import: 2.26.0_xconv27bia2733zao6ipggqv2i
   eslint-plugin-jsdoc: 39.3.3_eslint@8.20.0
   eslint-plugin-unused-imports: 2.0.0_my7vsbxuh6ptvjbn3hbmp532xa
@@ -1198,6 +1200,15 @@ packages:
     engines: {node: '>=0.10.0'}
     peerDependencies:
       eslint: '>=5.16.0'
+    dependencies:
+      eslint: 8.20.0
+    dev: true
+
+  /eslint-config-prettier/8.5.0_eslint@8.20.0:
+    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
     dependencies:
       eslint: 8.20.0
     dev: true

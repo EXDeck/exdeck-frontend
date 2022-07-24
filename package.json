@@ -3,9 +3,14 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "fix": "pnpm fix:prettier && pnpm fix:eslint",
+    "fix:prettier": "prettier --write \"src/**/*.{html,css,scss,js,ts,jsx,tsx,json}\"",
+    "lint:eslint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
+    "fix:eslint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\""
   },
   "license": "MIT",
   "devDependencies": {
@@ -14,6 +19,7 @@
     "@typescript-eslint/parser": "^5.30.7",
     "eslint": "^8.20.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.3",
     "eslint-plugin-unused-imports": "^2.0.0",

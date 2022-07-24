@@ -1,0 +1,11 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "cSpell.words": ["exdeck", "Gastore", "VITE"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "liveServer.settings.root": "/dist/",
+  "liveServer.settings.port": 5500,
+  "jsdoc-generator.functionVariablesAsFunctions": "true"
+}
