@@ -1,34 +1,26 @@
-## Usage
+![EXDeck](https://user-images.githubusercontent.com/66313777/128413639-b654dffb-e0e7-497a-b376-2c6eb4da5998.gif)
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+# Frontend for EXDeck
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+[EXDeck](https://exdeck.jp/)は、軽量なマルチカラムのTwitterクライアントです。
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+## 関連リポジトリ
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+- フロントエンド [exdeck-frontend](https://github.com/EXDeck/exdeck-frontend) (このリポジトリ)
+- バックエンド [exdeck-backend](https://github.com/EXDeck/exdeck-backend)
 
-## Available Scripts
+## 必要要件
 
-In the project directory, you can run:
+- Node.js Version Manager ([fnm](https://fnm.vercel.app/)を推奨)
+- [Node.js](https://nodejs.org/) v18.3.0
+- [pnpm](https://pnpm.io/)
 
-### `npm dev` or `npm start`
+## 使い方
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Twitterとの通信が可能になった段階で書きます。
 
-The page will reload if you make edits.<br>
+## ライセンス
 
-### `npm run build`
+Copyright (c) 2022 EXDeck <https://github.com/EXDeck>
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+このソフトウェアは、[MIT License](./LICENSE)に基づき配布しています。
