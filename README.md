@@ -2,7 +2,7 @@
 
 # Frontend for EXDeck
 
-[EXDeck](https://exdeck.jp/)は、軽量なマルチカラムのTwitterクライアントです。
+[EXDeck](https://exdeck.jp/)は、軽量なマルチカラムの Twitter クライアントです。
 
 ## 関連リポジトリ
 
@@ -17,10 +17,10 @@
 
 ## 使い方
 
-Twitterとの通信が可能になった段階で書きます。
+Twitter との通信が可能になった段階で書きます。
 
 ## ライセンス
 
 Copyright (c) 2022 EXDeck <https://github.com/EXDeck>
 
-このソフトウェアは、[MIT License](./LICENSE)に基づき配布しています。
+このソフトウェアは、[Apache License, Version 2.0](./LICENSE)に基づき配布しています。
