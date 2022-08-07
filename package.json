@@ -28,9 +28,11 @@
     "sass": "^1.54.0",
     "typescript": "^4.7.4",
     "vite": "^3.0.2",
+    "vite-plugin-eslint": "^1.7.0",
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
+    "destyle.css": "^3.0.2",
     "solid-js": "^1.4.7"
   }
 }
