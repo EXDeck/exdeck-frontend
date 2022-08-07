@@ -1,9 +1,13 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "cSpell.words": ["exdeck", "Gastore", "VITE"],
+  "cSpell.words": ["exdeck", "Gastore", "stylelint", "VITE"],
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "liveServer.settings.root": "/dist/",
   "liveServer.settings.port": 5500,
