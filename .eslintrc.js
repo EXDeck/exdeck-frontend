@@ -3,8 +3,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  plugins: ['import', 'unused-imports', '@typescript-eslint', 'jsdoc'],
-  extends: ['google', 'prettier'],
+  plugins: ['import', 'unused-imports', '@typescript-eslint', 'jsdoc', 'solid'],
+  extends: ['google', 'prettier', 'plugin:solid/typescript'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
