@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@solid-primitives/destructure': ^0.1.0
   '@types/node': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.30.7
   '@typescript-eslint/parser': ^5.30.7
@@ -21,12 +22,14 @@ specifiers:
   stylelint: ^14.9.1
   stylelint-config-recess-order: ^3.0.0
   stylelint-config-standard-scss: ^5.0.0
+  twitter-d: ^0.6.0
   typescript: ^4.7.4
   vite: ^3.0.2
   vite-plugin-eslint: ^1.7.0
   vite-plugin-solid: ^2.3.0
 
 dependencies:
+  '@solid-primitives/destructure': 0.1.0_solid-js@1.4.7
   destyle.css: 3.0.2
   solid-js: 1.4.7
 
@@ -49,6 +52,7 @@ devDependencies:
   stylelint: 14.9.1
   stylelint-config-recess-order: 3.0.0_stylelint@14.9.1
   stylelint-config-standard-scss: 5.0.0_cujuozyz774mlknuvi23rtftku
+  twitter-d: 0.6.0
   typescript: 4.7.4
   vite: 3.0.2_sass@1.54.0
   vite-plugin-eslint: 1.7.0_eslint@8.20.0+vite@3.0.2
@@ -481,6 +485,23 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
+
+  /@solid-primitives/destructure/0.1.0_solid-js@1.4.7:
+    resolution: {integrity: sha512-yplDSAO699mBWuAwdeZtBeLO54BO2GSNor1aN7VuQ09UNjbLxr+fyjzJSEh/rXvSvXF8C5jTicxW0mw/YFMshw==}
+    peerDependencies:
+      solid-js: ^1.3.0
+    dependencies:
+      '@solid-primitives/utils': 1.5.2_solid-js@1.4.7
+      solid-js: 1.4.7
+    dev: false
+
+  /@solid-primitives/utils/1.5.2_solid-js@1.4.7:
+    resolution: {integrity: sha512-dZUHjzasuqS2lDO+PQCY1+jFmtWHlaP3tUvkX1Jr06LI/Ipa2P/ZNVSvuIoqQ0Bg+Ny27LvtrXxflZNeGtptvA==}
+    peerDependencies:
+      solid-js: ^1.3.1
+    dependencies:
+      solid-js: 1.4.7
+    dev: false
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
@@ -3381,6 +3402,10 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.7.4
+    dev: true
+
+  /twitter-d/0.6.0:
+    resolution: {integrity: sha512-ql/rKDYwQ3qkSYAvOAQ8KzAUx0HxsaM/JpcM6AZ8RzLoHSdNy5f0W6KHQ8xKDO7sstaFwqq1qd97GUEQHR/IZg==}
     dev: true
 
   /type-check/0.4.0:
