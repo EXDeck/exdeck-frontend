@@ -1,9 +1,11 @@
-import path from 'path';
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
+import path from 'path'
+
+import { defineConfig } from 'vite'
+import eslint from 'vite-plugin-eslint'
+import solidPlugin from 'vite-plugin-solid'
 
 export default defineConfig({
-  plugins: [solidPlugin()],
+  plugins: [solidPlugin(), eslint()],
   build: {
     outDir: '../dist',
     emptyOutDir: true,
@@ -21,4 +23,4 @@ export default defineConfig({
       $: __dirname,
     },
   },
-});
+})
