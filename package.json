@@ -43,6 +43,8 @@
   "dependencies": {
     "@solid-primitives/destructure": "^0.1.0",
     "destyle.css": "^3.0.2",
+    "gastore": "^0.2.3",
+    "gastore-plugin-solid": "^0.1.3",
     "solid-js": "^1.4.7"
   }
 }
