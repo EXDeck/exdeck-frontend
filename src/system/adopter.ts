@@ -10,6 +10,7 @@ import { backend } from '@/refs/env'
 export async function getAuthTokens(): Promise<OauthRequestTokenRes> {
   const res = await fetch(`${backend.url}/api/auth`, {
     method: 'get',
+    credentials: 'include',
   })
   return await res.json()
 }
@@ -28,6 +29,7 @@ export async function postAuthRequest(token: string, pin: string): Promise<strin
       oauth_token: token,
       oauth_verifier: pin,
     }),
+    credentials: 'include',
   })
   return res.text()
 }
