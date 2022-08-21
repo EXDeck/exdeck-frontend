@@ -13,3 +13,21 @@ export async function getAuthTokens(): Promise<OauthRequestTokenRes> {
   })
   return await res.json()
 }
+
+/**
+ * TokenとpinでOAuthリクエスト
+ *
+ * @param {string} token OAuthトークン
+ * @param {string} pin PINコード
+ * @returns {Promise<string>} 合否
+ */
+export async function postAuthRequest(token: string, pin: string): Promise<string> {
+  const res = await fetch(`${backend.url}/api/auth`, {
+    method: 'post',
+    body: JSON.stringify({
+      oauth_token: token,
+      oauth_verifier: pin,
+    }),
+  })
+  return res.text()
+}

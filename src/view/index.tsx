@@ -9,7 +9,7 @@ import { App } from './pages/App'
 import { Onboarding } from './pages/Onboarding'
 
 const Index: Component = () => {
-  const [getIsLogIn] = createSignal(true)
+  const [getIsLogIn] = createSignal(false)
   return (
     <>
       <ImportSass />
