@@ -36,6 +36,22 @@ export const Onboarding: Component = () => {
           submit
         </button>
       </p>
+      <p>
+        <button
+          onClick={() => {
+            fetch('https://localhost:3000/api/cookie', { method: 'get', credentials: 'include' })
+          }}
+        >
+          Getテスト
+        </button>
+        <button
+          onClick={() => {
+            fetch('https://localhost:3000/api/cookie', { method: 'post', credentials: 'include' })
+          }}
+        >
+          Postテスト
+        </button>
+      </p>
     </div>
   )
 }
