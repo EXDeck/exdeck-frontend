@@ -2,34 +2,51 @@ import { OauthRequestTokenRes } from './types/apiResBody'
 
 import { backend } from '@/refs/env'
 
-/**
- * OAuth用リンクを取得
- *
- * @returns {Promise<OauthRequestTokenRes>} Oauth_token, oauth_token_secret
- */
-export async function getAuthTokens(): Promise<OauthRequestTokenRes> {
-  const res = await fetch(`${backend.url}/api/auth`, {
-    method: 'get',
-    credentials: 'include',
-  })
-  return await res.json()
-}
+type FetchParam1 = Parameters<typeof fetch>[0]
+
+type FetchParam2 = Parameters<typeof fetch>[1]
 
 /**
- * TokenとpinでOAuthリクエスト
+ * Credentials初期値includeのfetch
  *
- * @param {string} token OAuthトークン
- * @param {string} pin PINコード
- * @returns {Promise<string>} 合否
+ * @param {FetchParam1} input RequestInfo | URL
+ * @param {FetchParam2 | null} [init] RequestInit
+ * @returns {Promise<Response>} Fetch response
  */
-export async function postAuthRequest(token: string, pin: string): Promise<string> {
-  const res = await fetch(`${backend.url}/api/auth`, {
-    method: 'post',
-    body: JSON.stringify({
-      oauth_token: token,
-      oauth_verifier: pin,
-    }),
+function credentialsFetch(input: FetchParam1, init?: FetchParam2): Promise<Response> {
+  return fetch(input, {
     credentials: 'include',
+    ...init,
   })
-  return res.text()
+}
+
+export const auth = {
+  /**
+   * OAuth用リンクを取得
+   *
+   * @returns {Promise<OauthRequestTokenRes>} Oauth_token, oauth_token_secret
+   */
+  async getAuthTokens(): Promise<OauthRequestTokenRes> {
+    const res = await credentialsFetch(`${backend.url}/api/auth`, {
+      method: 'get',
+    })
+    return await res.json()
+  },
+  /**
+   * TokenとpinでOAuthリクエスト
+   *
+   * @param {string} token OAuthトークン
+   * @param {string} pin PINコード
+   * @returns {Promise<string>} 合否
+   */
+  async postAuthRequest(token: string, pin: string): Promise<string> {
+    const res = await credentialsFetch(`${backend.url}/api/auth`, {
+      method: 'post',
+      body: JSON.stringify({
+        oauth_token: token,
+        oauth_verifier: pin,
+      }),
+    })
+    return res.text()
+  },
 }
