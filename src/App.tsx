@@ -1,17 +1,25 @@
-import { Component, createSignal } from 'solid-js'
+import { Component, createResource, Match, Switch } from 'solid-js'
 
-import './App.scss'
+import { Main } from './pages/Main'
+import { Welcome } from './pages/Welcome'
+import { auth } from './scripts/backendApi'
 
 const App: Component = () => {
-  const [counter, setCounter] = createSignal(0)
-  setInterval(setCounter, 1000, (c: number) => c + 1)
-
+  const [status] = createResource(auth.getAuthStatus)
+  // const [getIsLogIn] = createSignal(false)
   return (
-    <>
-      <div>
-        <h1 class="header">{counter()}</h1>
-      </div>
-    </>
+    <Switch>
+      <Match when={status.loading}>
+        <span>Loading...</span>
+      </Match>
+      <Match when={status()?.signIn}>
+        <p>{status()?.specialKey}</p>
+        <Main />
+      </Match>
+      <Match when={!status()?.signIn}>
+        <Welcome />
+      </Match>
+    </Switch>
   )
 }
 
