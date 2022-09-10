@@ -1,28 +1,24 @@
-import { ServerOptions } from 'https'
 import path from 'path'
 
-import { certificateFor } from 'devcert'
 import { loadEnv, UserConfigExport } from 'vite'
 import eslint from 'vite-plugin-eslint'
+import mkcert from 'vite-plugin-mkcert'
 import solidPlugin from 'vite-plugin-solid'
 
-/**
- * Create Cert
- *
- * @returns {Promise<ServerOptions>} 証明書情報
- */
-async function createCert(): Promise<ServerOptions> {
-  const { key, cert } = await certificateFor('localhost')
-  return {
-    key,
-    cert,
+// eslint-disable-next-line jsdoc/require-jsdoc
+function mkCert() {
+  const bool = (str: string | undefined): boolean => {
+    if (typeof str === 'undefined') return false
+    return str.toLowerCase() === 'false' ? false : true
   }
+  if (!bool(process.env.VITE_DEV_SERVER_USE_HTTPS)) return undefined
+  return mkcert()
 }
 
 export default async ({ mode }: { mode: string }): Promise<UserConfigExport> => {
   process.env = { ...process.env, ...loadEnv(mode, `${process.cwd()}/src`) }
   return {
-    plugins: [solidPlugin(), eslint()],
+    plugins: [solidPlugin(), eslint(), mkCert()],
     build: {
       outDir: '../dist',
       emptyOutDir: true,
@@ -30,7 +26,6 @@ export default async ({ mode }: { mode: string }): Promise<UserConfigExport> => 
     },
     server: {
       host: true,
-      https: !process.env.VITE_DEV_SERVER_USE_HTTPS ? false : await createCert(),
     },
     root: './src',
     publicDir: '../public',
