@@ -6,10 +6,9 @@ import { auth } from '@/scripts/backendApi'
 import { createOauthLink } from '@/scripts/twitterUtil'
 
 export const Welcome: Component = () => {
-  const [getDummySignal] = createSignal(0)
   const [getPin, setPin] = createSignal('')
 
-  const [tokens] = createResource(getDummySignal, auth.getAuthTokens)
+  const [tokens] = createResource(() => auth.getAuthTokens())
   const [getOauthToken, setOauthToken] = createSignal('')
 
   createEffect(() => {
@@ -42,8 +41,9 @@ export const Welcome: Component = () => {
           style={{ border: '1px solid' }}
         />
         <button
-          onClick={() => {
-            auth.postAuthRequest(getOauthToken(), getPin())
+          onClick={async () => {
+            await auth.postAuthRequest(getOauthToken(), getPin())
+            location.reload()
           }}
         >
           submit
