@@ -4,6 +4,9 @@ import { Main } from './pages/Main'
 import { Welcome } from './pages/Welcome'
 import { auth } from './scripts/backendApi'
 
+import './App.scss'
+import '../node_modules/destyle.css'
+
 const App: Component = () => {
   const [status] = createResource(auth.getAuthStatus)
   // const [getIsLogIn] = createSignal(false)
@@ -13,7 +16,6 @@ const App: Component = () => {
         <span>Loading...</span>
       </Match>
       <Match when={status()?.signIn}>
-        <p>{status()?.specialKey}</p>
         <Main />
       </Match>
       <Match when={!status()?.signIn}>
