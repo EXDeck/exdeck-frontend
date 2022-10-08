@@ -7,8 +7,8 @@ import { Navigation } from '@/ui/Navigation'
 export const Deck: Component = (props) => {
   return (
     <Box class="exd-ui-deck">
-      <Navigation />
-      <Box>columns</Box>
+      <Navigation direction="vertical" />
+      <Box>Columns</Box>
     </Box>
   )
 }
