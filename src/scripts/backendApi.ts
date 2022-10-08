@@ -13,7 +13,7 @@ type FetchParam2 = Parameters<typeof fetch>[1]
  * @param {FetchParam2 | null} [init] RequestInit
  * @returns {Promise<Response>} Fetch response
  */
-function credentialsFetch(input: FetchParam1, init?: FetchParam2): Promise<Response> {
+export function credentialsFetch(input: FetchParam1, init?: FetchParam2): Promise<Response> {
   return fetch(input, {
     credentials: 'include',
     ...init,
