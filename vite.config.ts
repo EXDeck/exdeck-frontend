@@ -22,7 +22,7 @@ export default async ({ mode }: { mode: string }): Promise<UserConfigExport> => 
     build: {
       outDir: '../dist',
       emptyOutDir: true,
-      target: 'esnext',
+      target: 'es2017',
     },
     server: {
       host: true,
