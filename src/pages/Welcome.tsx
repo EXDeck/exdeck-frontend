@@ -1,20 +1,18 @@
-import {
-	Switch, Match, createResource, createSignal, createEffect,
-} from "solid-js"
+import { Switch, Match, createResource, createSignal, createEffect } from "solid-js"
 
 import { auth } from "@/scripts/backendApi"
 import { createOauthLink } from "@/scripts/twitterUtil"
 
 import type { Component } from "solid-js"
 
-const Welcome: Component = () =>
+const Welcome: Component = () => 
 {
 	const [getPin, setPin] = createSignal("")
 
 	const [tokens] = createResource(() => auth.getAuthTokens())
 	const [getOauthToken, setOauthToken] = createSignal("")
 
-	createEffect(() =>
+	createEffect(() => 
 	{
 		const tmpTokens = tokens()
 		if (!tmpTokens) return
@@ -38,7 +36,7 @@ const Welcome: Component = () =>
 			</Switch>
 			<p>
 				<input
-					onInput={event =>
+					onInput={event => 
 					{
 						setPin(event.currentTarget.value)
 					}}
@@ -46,7 +44,7 @@ const Welcome: Component = () =>
 					style={{ border: "1px solid" }}
 				/>
 				<button
-					onClick={async () =>
+					onClick={async () => 
 					{
 						await auth.postAuthRequest(getOauthToken(), getPin())
 						window.location.reload()

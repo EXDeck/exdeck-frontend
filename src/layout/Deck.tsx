@@ -5,7 +5,7 @@ import type { Component } from "solid-js"
 
 import "./Deck.scss"
 
-const Deck: Component = () =>
+const Deck: Component = () => 
 {
 	return (
 		<Box class="exd-ui-deck">

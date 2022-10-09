@@ -3,13 +3,18 @@
     "browser": true,
     "es2017": true
   },
-  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended", "plugin:solid/recommended"],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:solid/recommended",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "import", "unused-imports", "solid", "prettier"],
+  "plugins": ["@typescript-eslint", "import", "unused-imports", "solid"],
   "settings": {
     "import/resolver": {
       "typescript": {}
