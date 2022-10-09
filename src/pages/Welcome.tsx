@@ -7,7 +7,7 @@ import { createOauthLink } from "@/scripts/twitterUtil"
 
 import type { Component } from "solid-js"
 
-export const Welcome: Component = () =>
+const Welcome: Component = () =>
 {
 	const [getPin, setPin] = createSignal("")
 
@@ -38,9 +38,9 @@ export const Welcome: Component = () =>
 			</Switch>
 			<p>
 				<input
-					onInput={e =>
+					onInput={event =>
 					{
-						setPin(e.currentTarget.value)
+						setPin(event.currentTarget.value)
 					}}
 					type="text"
 					style={{ border: "1px solid" }}
@@ -49,7 +49,7 @@ export const Welcome: Component = () =>
 					onClick={async () =>
 					{
 						await auth.postAuthRequest(getOauthToken(), getPin())
-						location.reload()
+						window.location.reload()
 					}}
 				>
           submit
@@ -58,3 +58,5 @@ export const Welcome: Component = () =>
 		</div>
 	)
 }
+
+export default Welcome

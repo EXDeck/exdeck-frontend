@@ -24,6 +24,8 @@ function bool(str: string | undefined): boolean
 	return str.toLowerCase() !== "false"
 }
 
+// NOTE 将来の追加を見込んで無効化
+// eslint-disable-next-line import/prefer-default-export
 export const backend = {
 	https: bool(import.meta.env.VITE_BACKEND_USE_HTTPS),
 	url: bool(import.meta.env.VITE_BACKEND_USE_HTTPS)

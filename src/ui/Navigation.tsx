@@ -1,4 +1,4 @@
-import { Box } from "../components/Box"
+import Box from "../components/Box"
 
 import type { Component } from "solid-js"
 
@@ -6,7 +6,7 @@ interface Props {
   direction: "vertical" | "horizontal";
 }
 
-export const Navigation: Component<Props> = props =>
+const Navigation: Component<Props> = props =>
 {
 	return (
 		<Box
@@ -19,3 +19,5 @@ export const Navigation: Component<Props> = props =>
 		</Box>
 	)
 }
+
+export default Navigation

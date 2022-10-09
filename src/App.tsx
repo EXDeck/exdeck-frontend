@@ -2,8 +2,8 @@ import {
 	Component, createResource, Match, Switch,
 } from "solid-js"
 
-import { Main } from "./pages/Main"
-import { Welcome } from "./pages/Welcome"
+import Main from "./pages/Main"
+import Welcome from "./pages/Welcome"
 import { auth } from "./scripts/backendApi"
 
 import "./base.scss"

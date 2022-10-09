@@ -32,7 +32,7 @@ export const auth = {
 		const res = await credentialsFetch(`${backend.url}/api/auth/status`, {
 			method: "get",
 		})
-		return await res.json()
+		return res.json()
 	},
 
 	/**
@@ -45,7 +45,7 @@ export const auth = {
 		const res = await credentialsFetch(`${backend.url}/api/auth`, {
 			method: "get",
 		})
-		return await res.json()
+		return res.json()
 	},
 
 	/**

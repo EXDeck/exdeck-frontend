@@ -1,10 +1,11 @@
+import Box from "@/components/Box"
+import Navigation from "@/ui/Navigation"
+
 import type { Component } from "solid-js"
 
-import { Box } from "@/components/Box"
 import "./Deck.scss"
-import { Navigation } from "@/ui/Navigation"
 
-export const Deck: Component = props =>
+const Deck: Component = () =>
 {
 	return (
 		<Box class="exd-ui-deck">
@@ -13,3 +14,5 @@ export const Deck: Component = props =>
 		</Box>
 	)
 }
+
+export default Deck
