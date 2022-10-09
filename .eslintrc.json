@@ -1,0 +1,188 @@
+{
+  "env": {
+    "browser": true,
+    "es2017": true
+  },
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended", "plugin:solid/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "import", "unused-imports", "solid", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "indent": [
+      "error",
+      "tab",
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-tabs": [
+      "error",
+      {
+        "allowIndentationTabs": true
+      }
+    ],
+    "quotes": ["error", "double"],
+    "quote-props": ["error", "as-needed"],
+    "semi": ["error", "never"],
+    "brace-style": ["error", "allman"],
+    "padded-blocks": ["error", "never"],
+    "dot-location": ["error", "property"],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": false
+      }
+    ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowAllPropertiesOnSameLine": true
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "function-paren-newline": ["error", "multiline-arguments"],
+    "comma-dangle": ["error", "always-multiline"],
+    "one-var": ["error", "never"],
+    "no-extra-parens": [
+      "error",
+      "all",
+      {
+        "returnAssign": false
+      }
+    ],
+    "arrow-parens": ["error", "as-needed"],
+    "new-parens": ["error", "never"],
+    "curly": ["error", "multi-line"],
+    "array-element-newline": [
+      "error",
+      {
+        "multiline": true
+      }
+    ],
+    "max-lines-per-function": [
+      "error",
+      {
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "lines-around-comment": [
+      "error",
+      {
+        "beforeLineComment": true,
+        "allowBlockStart": true,
+        "allowClassStart": true,
+        "allowObjectStart": true,
+        "allowArrayStart": true
+      }
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "id-length": [
+      "error",
+      {
+        "exceptionPatterns": ["i|j"]
+      }
+    ],
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-ignore": "allow-with-description"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index"
+        ],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/extensions": ["error", "never"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["strictCamelCase"]
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["const"],
+        "types": ["function"],
+        "format": ["strictCamelCase", "StrictPascalCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["StrictPascalCase"]
+      },
+      {
+        "selector": "objectLiteralMethod",
+        "format": []
+      },
+      {
+        "selector": "property",
+        "format": []
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "WithStatement",
+        "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "max-len": 0,
+    "no-console": 0,
+    "no-ternary": 0,
+    "no-plusplus": 0,
+    "no-multi-assign": 0,
+    "linebreak-style": 0,
+    "no-magic-numbers": 0,
+    "arrow-body-style": 0,
+    "multiline-ternary": 0,
+    "no-confusing-arrow": 0,
+    "no-warning-comments": 0,
+    "no-use-before-define": 0,
+    "no-useless-constructor": 0,
+    "newline-per-chained-call": 0,
+    "function-call-argument-newline": 0
+  }
+}
