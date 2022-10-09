@@ -8,7 +8,7 @@
  */
 function check<T>(val: T | undefined): T 
 {
-	if (typeof val === "undefined")
+	if (typeof val === "undefined") 
 	{
 		throw new Error("設定が必須な環境変数が設定されていません。環境変数の設定を見直してください。")
 	}
