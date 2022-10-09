@@ -2,7 +2,7 @@ import Deck from "@/layout/Deck"
 
 import type { Component } from "solid-js"
 
-const Main: Component = () =>
+const Main: Component = () => 
 {
 	return <Deck />
 }

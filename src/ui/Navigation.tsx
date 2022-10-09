@@ -6,7 +6,7 @@ interface Props {
   direction: "vertical" | "horizontal";
 }
 
-const Navigation: Component<Props> = props =>
+const Navigation: Component<Props> = props => 
 {
 	return (
 		<Box

@@ -13,7 +13,7 @@ type FetchParam2 = Parameters<typeof fetch>[1];
  * @param {FetchParam2 | null} [init] RequestInit
  * @returns {Promise<Response>} Fetch response
  */
-export function credentialsFetch(input: FetchParam1, init?: FetchParam2): Promise<Response>
+export function credentialsFetch(input: FetchParam1, init?: FetchParam2): Promise<Response> 
 {
 	return fetch(input, {
 		credentials: "include",
@@ -27,7 +27,7 @@ export const auth = {
    *
    * @returns {Promise<AuthStatusRes>} Status, ok
    */
-	async getAuthStatus(): Promise<AuthStatusRes>
+	async getAuthStatus(): Promise<AuthStatusRes> 
 	{
 		const res = await credentialsFetch(`${backend.url}/api/auth/status`, {
 			method: "get",
@@ -40,7 +40,7 @@ export const auth = {
    *
    * @returns {Promise<OauthRequestTokenRes>} Oauth_token, oauth_token_secret
    */
-	async getAuthTokens(): Promise<OauthRequestTokenRes>
+	async getAuthTokens(): Promise<OauthRequestTokenRes> 
 	{
 		const res = await credentialsFetch(`${backend.url}/api/auth`, {
 			method: "get",
@@ -55,7 +55,7 @@ export const auth = {
    * @param {string} pin PINコード
    * @returns {Promise<string>} 合否
    */
-	async postAuthRequest(token: string, pin: string): Promise<string>
+	async postAuthRequest(token: string, pin: string): Promise<string> 
 	{
 		const res = await credentialsFetch(`${backend.url}/api/auth`, {
 			method: "post",

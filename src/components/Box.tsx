@@ -1,6 +1,4 @@
-import {
-	JSX, JSXElement, mergeProps, splitProps,
-} from "solid-js"
+import { JSX, JSXElement, mergeProps, splitProps } from "solid-js"
 import { Dynamic } from "solid-js/web"
 import "./Box.scss"
 
@@ -12,7 +10,7 @@ interface BoxProps<T extends keyof HTMLElementTagNameMap> extends JSX.HTMLAttrib
   component?: T;
 }
 
-const Box = <T extends keyof HTMLElementTagNameMap>(props: BoxProps<T>): JSXElement =>
+const Box = <T extends keyof HTMLElementTagNameMap>(props: BoxProps<T>): JSXElement => 
 {
 	const [classList, other] = splitProps(props, ["classList"])
 	const mergedOther = mergeProps({ component: "div" }, other)

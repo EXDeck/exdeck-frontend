@@ -4,28 +4,28 @@ export interface CollectorConfig {
   name: string;
 }
 
-export class Collector
+export class Collector 
 {
 	private id: string
 	private name: string
 
-	constructor(config: CollectorConfig)
+	constructor(config: CollectorConfig) 
 	{
 		this.id = randomUUID()
 		this.name = config.name || ""
 	}
 
-	get getId()
+	get getId() 
 	{
 		return this.id
 	}
 
-	get getName()
+	get getName() 
 	{
 		return this.name
 	}
 
-	set setName(name: string)
+	set setName(name: string) 
 	{
 		this.name = name
 	}
