@@ -1,7 +1,8 @@
-import type { Component } from 'solid-js'
+import { Deck } from "@/layout/Deck"
 
-import { Deck } from '@/layout/Deck'
+import type { Component } from "solid-js"
 
-export const Main: Component = (props) => {
-  return <Deck />
+export const Main: Component = props =>
+{
+	return <Deck />
 }

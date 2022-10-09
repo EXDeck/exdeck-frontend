@@ -11,5 +11,28 @@
   },
   "liveServer.settings.root": "/dist/",
   "liveServer.settings.port": 5500,
-  "jsdoc-generator.functionVariablesAsFunctions": "true"
+  "jsdoc-generator.functionVariablesAsFunctions": "true",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.semicolons": "remove",
+  "javascript.format.semicolons": "remove",
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": false
+  }
 }
