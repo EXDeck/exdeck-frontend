@@ -16,7 +16,7 @@ const Welcome: Component = () =>
 	{
 		const tmpTokens = tokens()
 		if (!tmpTokens) return
-		const { oauth_token: oauthToken } = tmpTokens
+		const { oauthToken } = tmpTokens
 		setOauthToken(oauthToken)
 	})
 
