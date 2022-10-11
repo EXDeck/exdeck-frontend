@@ -12,12 +12,41 @@
 ## 必要要件
 
 - Node.js Version Manager ([fnm](https://fnm.vercel.app/)を推奨)
-- [Node.js](https://nodejs.org/) v18.3.0
+- [Node.js](https://nodejs.org/) LTS
 - [pnpm](https://pnpm.io/)
 
 ## 使い方
 
-Twitter との通信が可能になった段階で書きます。
+### 開発用サーバーの起動
+
+`src/.env.development.local`ファイルを作成します。
+
+バックエンドと HTTPS 通信をする場合は、`VITE_BACKEND_USE_HTTPS`(バックエンドとの HTTPS 通信の使用フラグ)を true にし、`VITE_BACKEND_URL_HTTPS`(開発時に HTTPS 通信を行うバックエンドの URL) を指定します。
+バックエンドと HTTP 通信をする場合は、`VITE_BACKEND_USE_HTTPS`(バックエンドとの HTTPS 通信の使用フラグ)を false にし、`VITE_BACKEND_URL_HTTP`(開発時に HTTP 通信を行うバックエンドの URL) を指定します。
+また、開発環境で HTTPS 通信を使用する場合は`VITE_DEV_SERVER_USE_HTTPS`(開発環境での HTTPS 通信の使用フラグ)を true にします。
+
+記入例は`src/.env.development.example`を参照してください。
+
+その後、以下のコマンドを実行します。
+
+```sh
+pnpm dev
+```
+
+### 本番環境のビルド
+
+`src/.env.production.local`ファイルを作成します。
+
+バックエンドと HTTPS 通信をする場合は、`VITE_BACKEND_USE_HTTPS`(バックエンドとの HTTPS 通信の使用フラグ)を true にし、`VITE_BACKEND_URL_HTTPS`(開発時に HTTPS 通信を行うバックエンドの URL) を指定します。
+バックエンドと HTTP 通信をする場合は、`VITE_BACKEND_USE_HTTPS`(バックエンドとの HTTPS 通信の使用フラグ)を false にし、`VITE_BACKEND_URL_HTTP`(開発時に HTTP 通信を行うバックエンドの URL) を指定します。
+
+記入例は`src/.env.production.example`を参照してください。
+
+その後、以下のコマンドを実行します。
+
+```sh
+pnpm build
+```
 
 ## ライセンス
 
