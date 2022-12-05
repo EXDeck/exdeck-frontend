@@ -1,0 +1,38 @@
+# 仕様
+これは書きかけです
+## アプリケーション全体
+- 基本的にWeb Appではない方のTweetDeckの機能を再現
+  - マルチカラムなUI
+    - Home
+    - User
+    - Notifications
+      - 少し面倒そう
+    - Search
+    - List
+    - Collection/Bookmarks
+      - これアクセスできるのかな
+    - Trending
+      - これアクセスできるのかな2
+    - Likes
+    - Messages
+      - 少し面倒そう2
+    - Mentions
+    - Followers
+    - Scheduled
+      - これアクセスできるのかな3
+    - Messages(all accounts)
+      - 少し面倒そう3
+    - Mentions(all accounts)
+    - Activity
+      - これアクセスできるのかな3
+  - サイドナビゲーション
+    - ツイート
+    - 検索
+    - カラム操作
+    - 設定
+  - 疑似ユーザーストリーム
+    - TweetDeck同様数秒でのポーリングで取得
+    - 通常は不可能なのでユーザーの自己責任で解禁
+- 自由度の高いカスタマイズ性を持たせる
+  - CK/CSの差し替え
+  - UserStyle/UserScriptの保存・実行環境の内蔵
