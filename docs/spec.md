@@ -81,7 +81,7 @@
 
 ### バックエンド
 
-- RestfulAPI っぽい構成
+- RESTful API っぽい構成
 - Koa.js 使用
 - 実質 TwitterAPI の wrapper
   - フロントが cookie で保持してる ck/cs やアクセストークンを使ってリクエスト
